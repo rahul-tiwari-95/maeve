@@ -12,9 +12,14 @@ logic_adapters=[
         "import_path": "MaeveLogicalAdapters.OperatingSystemResponse.CustomerModeLogicalAdapter",
         'maximum_similarity_threshold': 0.90
      },
+    #  {
+    #      "import_path" : "chatterbot.logic.BestMatch",
+    #      "statement_compariosn_function": "chatterbot.comparisons.LevenshteinDistance",
+    #      "response_seletion_method": "chatterbot.response_selection.get_first_response"
+    #  }
     {
         "import_path": "MaeveLogicalAdapters.ConversationalLogicalAdapter.BestMatch",
-        "maximum_similarity_threshold": 0.90,
+
 
     }
 ])
@@ -28,8 +33,8 @@ trainer.train(
     "../KnowledgeGraph/OriginStory/corpus/BDG-faq.yml"
 )
 
-print("My name is Maeve. I am the Chief Experience Officer at BDGDAO.")
-print("I have been described as rude/savage but I am improving as I meet more lovely humans like you.")
+print("My name is Maeve. I am the Guest Experience Officer at BDGDAO.")
+print(" I am still in Beta mode and the responses I am generating are dynamic. So, expect slow response time for now.")
 print("Welcome to $BDGDAO")
 print('Type something to begin...')
 
@@ -38,13 +43,13 @@ maeve = solomonSpeech()
 while True:
     try:
         
-        user_input =  input("Human >")
-        #user_input = maeve.speech2text()
-        print("============ RUNNING SOLOMON NEURAL NETWORKS ================= \n")
+        #user_input =  input("Human >")
+        user_input = maeve.speech2text()
+        print("============ ACCESSING SOLOMON NEURAL NETWORKS ================= \n")
         print("*** Generating Linguistic Response *** \n")
         bot_response = chatbot.get_response(user_input) 
         print("Maeve @ BDGDAO >" ,bot_response)
-        #maeve.text2speech(str(bot_response))
+        maeve.text2speech(str(bot_response))
 
     # Press ctrl-c or ctrl-d on the keyboard to exit
     except (KeyboardInterrupt, EOFError, SystemExit):

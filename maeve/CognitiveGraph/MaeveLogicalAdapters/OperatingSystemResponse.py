@@ -10,7 +10,7 @@ class StoryModeLogicalAdapter(LogicAdapter):
 
     
     def can_process(self, statement):
-        if statement.text.startswith('Activate Ridley Scott mode'):
+        if statement.text.startswith('Activate cognitive mode'):
             return True
         else:
             return False
@@ -22,7 +22,7 @@ class StoryModeLogicalAdapter(LogicAdapter):
         payload=solomon.speech2text()
         response_statement = Statement(text=maeve.textGenerationNeuralNetwork(payload))
         #print(response_statement)
-        #bernard.text2speech(str(response_statement))
+        solomon.text2speech(str(response_statement))
         return response_statement
         
 
