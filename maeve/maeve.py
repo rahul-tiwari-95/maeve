@@ -3,25 +3,17 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 #from SpeechNeuralNetworks.speechtext import solomonSpeech
 from CognitiveGraph.SpeechNeuralNetworks.speechtext import solomonSpeech
 
+
+
 chatbot = ChatBot("Maeve3.0",
 logic_adapters=[
-    # {
-    #     "import_path": "CognitiveGraph.MaeveLogicalAdapters.OperatingSystemResponse.StoryModeLogicalAdapter",
-    #     'maximum_similarity_threshold': 0.90
-    #  },
-    #  {
-    #     "import_path": "CognitiveGraph.MaeveLogicalAdapters.OperatingSystemResponse.CustomerModeLogicalAdapter",
-    #     'maximum_similarity_threshold': 0.90
-    #  },
+
      {
          "import_path" : "chatterbot.logic.BestMatch",
+         "maximum_similarity_threshold" : 0.90
          
      }
-    # {
-    #     "import_path": "MaeveLogicalAdapters.ConversationalLogicalAdapter.BestMatch",
-
-
-    # }
+    
 ])
 trainer = ChatterBotCorpusTrainer(chatbot)
 
@@ -43,13 +35,13 @@ maeve = solomonSpeech()
 while True:
     try:
         
-        #user_input =  input("Human >")
-        user_input = maeve.speech2text()
+        user_input =  input("Human >")
+        #user_input = maeve.speech2text()
         print("============ ACCESSING SOLOMON NEURAL NETWORKS ================= \n")
         print("*** Generating Linguistic Response *** \n")
         bot_response = chatbot.get_response(user_input) 
         print("Maeve v2.882 @ BDGDAO >" ,bot_response)
-        maeve.text2speech(str(bot_response))
+        #maeve.text2speech(str(bot_response))
 
     # Press ctrl-c or ctrl-d on the keyboard to exit
     except (KeyboardInterrupt, EOFError, SystemExit):

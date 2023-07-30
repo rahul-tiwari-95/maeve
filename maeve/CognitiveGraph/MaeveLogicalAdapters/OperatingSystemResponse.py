@@ -10,7 +10,7 @@ class StoryModeLogicalAdapter(LogicAdapter):
 
     
     def can_process(self, statement):
-        if statement.text.startswith('Activate cognitive mode'):
+        if statement.text.startswith('Solomon go to cognitive mode.'):
             return True
         else:
             return False
@@ -32,7 +32,7 @@ class CustomerModeLogicalAdapter(LogicAdapter):
 
     
     def can_process(self,statement):
-        if statement.text.startswith('Activate deep language analysis'):
+        if statement.text.startswith('Solomon go to analysis mode.'):
             return True
         else:
             return False

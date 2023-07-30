@@ -6,11 +6,11 @@ chatbot = ChatBot("Maeve",
 logic_adapters=[
     {
         "import_path": "MaeveLogicalAdapters.OperatingSystemResponse.StoryModeLogicalAdapter",
-        'maximum_similarity_threshold': 0.90
+
      },
      {
         "import_path": "MaeveLogicalAdapters.OperatingSystemResponse.CustomerModeLogicalAdapter",
-        'maximum_similarity_threshold': 0.90
+
      },
     #  {
     #      "import_path" : "chatterbot.logic.BestMatch",
