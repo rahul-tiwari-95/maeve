@@ -3,7 +3,7 @@ from azure.cognitiveservices.speech.audio import AudioOutputConfig
 
 #Class responsible for speech recognition
 
-subscription_key ='89bca3f0d5e54b3eb35e69a9300ba9aa'
+
 region='eastus'
 
 
