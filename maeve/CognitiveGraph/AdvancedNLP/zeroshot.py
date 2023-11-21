@@ -1,7 +1,7 @@
 import json
 import requests
 
-headers = {"Authorization": f"Bearer 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"}
+
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-mnli"
 
 #Zero Shot Class Classification 
