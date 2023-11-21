@@ -1,6 +1,6 @@
 import json
 import requests
-headers = {"Authorization": f"Bearer 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"}
+
 API_URL = "https://api-inference.huggingface.co/models/gpt2"
 
 #Text Generation Neural Network Class 
